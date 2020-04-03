@@ -1,0 +1,85 @@
+@import '../../variables.scss';
+
+.contact-form {
+	form {
+		background-color: $white;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 3rem;
+		border-radius: 24px;
+
+		.field {
+			padding: 1rem;
+			display: flex;
+
+			&::before {
+				content: '';
+				width: 24px;
+				height: 24px;
+				background-color: rgba($black, 0.25);
+				border-radius: 12px;
+				margin-right: 2rem;
+				margin-top: 1.75rem;
+			}
+
+			&.valid {
+				&::before {
+					background-color: $accent;
+					opacity: 1;
+				}
+			}
+
+			&.error {
+				&::before {
+					background-color: $error;
+					opacity: 1;
+				}
+			}
+
+			div {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+
+				&::after {
+					content: '';
+					width: 0;
+					height: 1px;
+					background-color: $accent;
+					display: block;
+					margin: -1px auto 0 auto;
+					transition: 0.25s all ease;
+				}
+
+				&:focus-within {
+					.input {
+						border-color: transparent;
+					}
+					&::after {
+						width: 100%;
+					}
+				}
+
+				label {
+					color: $accent;
+					text-transform: uppercase;
+					font-size: 1rem;
+				}
+
+				.input {
+					position: relative;
+					background-color: transparent;
+					padding: 0.5rem;
+					border-bottom: 1px solid rgba($black, 0.28);
+					display: block;
+					font-size: 1rem;
+				}
+			}
+		}
+
+		.submit-button {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}

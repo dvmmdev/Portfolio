@@ -1,0 +1,48 @@
+import React from 'react';
+import './styles.scss';
+
+export default () => {
+	return (
+		<div className='contact-form'>
+			<form action='' autoComplete='off'>
+				<div className='field'>
+					<div>
+						<label htmlFor='name'>Full Name</label>
+						<input
+							className='input'
+							type='text'
+							name='name'
+							id='contact-email'
+						/>
+					</div>
+				</div>
+				<div className='field'>
+					<div>
+						<label htmlFor='email'>Email</label>
+						<input
+							className='input'
+							type='email'
+							name='email'
+							id='contact-name'
+						/>
+					</div>
+				</div>
+				<div className='field'>
+					<div>
+						<label htmlFor='name'>Message</label>
+						<textarea
+							className='input'
+							name='message'
+							id='contact-msg'
+							cols='32'
+							rows='10'
+						></textarea>
+					</div>
+				</div>
+				<div className='submit-button'>
+					<input type='submit' value='Send' className='button' />
+				</div>
+			</form>
+		</div>
+	);
+};

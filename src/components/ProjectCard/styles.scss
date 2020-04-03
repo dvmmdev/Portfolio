@@ -1,0 +1,112 @@
+@import '../../variables.scss';
+
+$thumb-height: 240px;
+
+.project-card {
+	background-color: transparent;
+	border-radius: 24px 24px 0 0;
+	border-bottom: 1px solid transparent;
+	transition: all ease 0.25s;
+
+	&:hover {
+		background-color: $white;
+		border-bottom: 1px solid $accent;
+		box-shadow: 0 0 16px rgba($black, 0.08);
+
+		.thumb {
+			width: 100%;
+			border-radius: 24px 24px 0 0;
+			box-shadow: none;
+		}
+
+		.info {
+			.tags {
+				width: 0;
+			}
+
+			h3 {
+				width: 0;
+			}
+
+			.desc {
+				max-height: 120px;
+				opacity: 1;
+			}
+
+			.links {
+				height: 36px;
+				margin-top: 1rem;
+				opacity: 1;
+			}
+		}
+	}
+
+	.thumb {
+		height: $thumb-height;
+		background-color: transparent;
+		overflow: hidden;
+		transition: all ease 0.25s;
+		margin: 0 auto;
+
+		box-shadow: 0 0 8px rgba($black, 0.12);
+		width: $thumb-height;
+		border-radius: 50%;
+
+		img {
+			min-width: 100%;
+			min-height: 100%;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	.info {
+		padding: 1rem;
+		overflow: hidden;
+
+		.tags {
+			text-transform: uppercase;
+			color: $accent;
+			font-size: 16px;
+			width: 100%;
+			text-align: center;
+			transition: 0.35s all ease;
+			white-space: nowrap;
+		}
+
+		h3 {
+			font-size: 24px;
+			font-weight: bold;
+			width: 100%;
+			text-align: center;
+			transition: 0.45s all ease;
+			white-space: nowrap;
+		}
+
+		.desc {
+			font-size: 16px;
+			opacity: 0;
+			transition: 0.25s all ease;
+			max-height: 0;
+		}
+
+		.links {
+			display: flex;
+			justify-content: flex-end;
+			height: 0;
+			transition: 0.25s all ease;
+			overflow: hidden;
+			opacity: 0;
+
+			.button {
+				margin-right: 0.25rem;
+			}
+
+			.button:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
