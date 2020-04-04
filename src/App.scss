@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './markdown.scss';
 
 * {
 	box-sizing: border-box;
@@ -9,36 +10,25 @@
 	outline: none;
 }
 
-input,
-textarea {
-	font-family: inherit;
-	font-size: inherit;
-}
-
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: $bg;
 	color: $black;
+	min-height: 100vh;
 
 	--scrollY: 0;
 	--scrollY-percent: 0;
+}
 
-	&::before {
-		content: '';
-		position: fixed;
-		// top: calc(var(--scrollY) * -0.25px);
-		top: 0;
-		right: calc(var(--scrollY-percent) * 50vw + 10vw);
-		left: calc(var(--scrollY-percent) * -50vw + 50vw);
-		height: 100vh;
-		background-image: url('https://images.unsplash.com/photo-1585655177361-4b319e379577?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w1200&q=80');
-		background-position: center;
-		// background-size: cover;
-		background-size: 100%;
-		filter: grayscale(1);
-		opacity: 0.08;
-		z-index: -1;
-	}
+::selection {
+	background-color: $black;
+	color: $white;
+}
+
+input,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
 }
 
 a,
@@ -48,9 +38,8 @@ a:visited {
 }
 
 .wrapper {
-	max-width: 1600px;
+	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 2rem;
 }
 
 h2 {
@@ -81,6 +70,10 @@ h2 {
 		border-radius: 12px;
 		margin-right: 24px;
 	}
+}
+
+ul {
+	list-style: none;
 }
 
 .button {
@@ -116,10 +109,26 @@ h2 {
 	display: grid;
 	grid-template-rows: auto 3fr 2fr;
 
+	&::before {
+		content: '';
+		position: fixed;
+		// top: calc(var(--scrollY) * -0.25px);
+		top: 0;
+		right: calc(var(--scrollY-percent) * 50vw + 10vw);
+		left: calc(var(--scrollY-percent) * -50vw + 50vw);
+		height: 100vh;
+		background-image: url('https://images.unsplash.com/photo-1585655177361-4b319e379577?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w1200&q=80');
+		background-position: center;
+		// background-size: cover;
+		background-size: 100%;
+		filter: grayscale(1);
+		opacity: 0.08;
+		z-index: -1;
+	}
+
 	.hero {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		align-items: center;
 	}
 
 	.cta {
@@ -164,10 +173,5 @@ section {
 				}
 			}
 		}
-	}
-
-	.content {
-		max-width: 1200px;
-		margin: 0 auto;
 	}
 }

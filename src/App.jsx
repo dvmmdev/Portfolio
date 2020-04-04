@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import './App.scss';
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import BlogPost from './pages/BlogPost';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ProjectCard from './components/ProjectCard';
+import ProjectCard from './components/PostCard';
 import ContactForm from './components/ContactForm';
 
-import projects from './projects';
+import { Projects } from './posts';
 
 export default () => {
 	useEffect(() => {
@@ -25,8 +29,8 @@ export default () => {
 		);
 	}
 
-	return (
-		<div className='App'>
+	const homepage = (
+		<>
 			<div className='landing'>
 				<Header />
 				<div className='hero'>
@@ -51,10 +55,10 @@ export default () => {
 					<h2>
 						<a href='#projects'>Projects</a>
 					</h2>
-					<div className='content projects-container'>
-						{projects.map((project, i) => (
+					<div className='projects-container'>
+						{Projects.map((project, i) => (
 							<ProjectCard
-								project={project}
+								project={project.attributes}
 								key={i + Math.random()}
 							/>
 						))}
@@ -66,7 +70,7 @@ export default () => {
 					<h2>
 						<a href='#about'>About Me</a>
 					</h2>
-					<div className='content about-container'>
+					<div className='about-container'>
 						<div>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur
@@ -246,6 +250,21 @@ export default () => {
 					<ContactForm />
 				</div>
 			</section>
+		</>
+	);
+
+	return (
+		<div className='App'>
+			<Router>
+				<Switch>
+					<Route exact path='/'>
+						{homepage}
+					</Route>
+					<Route exact path='/blog'>
+						<BlogPost />
+					</Route>
+				</Switch>
+			</Router>
 			<Footer />
 		</div>
 	);

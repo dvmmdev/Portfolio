@@ -1,0 +1,151 @@
+@import './variables.scss';
+
+.markdown {
+	background-color: $bg;
+	h1 {
+		font-size: 4rem;
+		background-color: $black;
+		color: $bg;
+		margin-bottom: 2rem;
+
+		&:hover {
+			&::before {
+				background-color: $accent;
+			}
+		}
+
+		&::before {
+			content: '';
+			width: 24px;
+			height: 24px;
+			margin-right: 24px;
+			background-color: $bg;
+			display: inline-block;
+		}
+
+		&::selection {
+			background-color: $white;
+			color: $black;
+		}
+	}
+
+	h2 {
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+	}
+	h3 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	p {
+		margin-bottom: 1rem;
+	}
+
+	a,
+	a:visited {
+		color: $accent;
+	}
+
+	ul {
+		margin-left: 1rem;
+		margin-bottom: 2rem;
+
+		li {
+			display: flex;
+			align-items: center;
+			&::before {
+				content: '';
+				width: 4px;
+				height: 4px;
+				display: inline-block;
+				background-color: $accent;
+				margin-right: 0.5rem;
+			}
+		}
+	}
+
+	table {
+		font-size: 1rem;
+		border-spacing: 0;
+		border: 1px solid $black;
+		margin-bottom: 2rem;
+
+		th {
+			font-weight: bold;
+		}
+
+		th,
+		td {
+			padding: 0.5rem;
+			border: none;
+		}
+
+		thead tr {
+			background-color: $black;
+			color: $white;
+		}
+
+		tbody tr {
+			&:nth-of-type(2n + 1) {
+				background-color: $white;
+			}
+		}
+	}
+
+	code {
+		background-color: $black;
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.5rem;
+		margin: 0 0.25rem;
+		color: $white;
+	}
+
+	hr {
+		text-align: center;
+		margin: 2rem 0;
+		&::before {
+			content: '...';
+			font-size: 6rem;
+			color: rgba($black, 0.25);
+		}
+	}
+
+	img {
+		max-width: 800px;
+		max-height: 320px;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		object-position: left;
+	}
+
+	details {
+		margin-bottom: 2rem;
+		padding: 1rem;
+		border: 1px solid rgba($black, 0.25);
+		border-radius: 0.5rem;
+
+		pre {
+			margin-top: 1rem;
+			margin-bottom: 0;
+		}
+	}
+
+	pre {
+		display: flex;
+		padding: 1rem 2rem;
+		background-color: $black;
+		color: $white;
+		font-size: 1rem;
+		margin-bottom: 2rem;
+		border-left: 4px solid $accent;
+
+		code {
+			font-size: 1rem;
+			padding: 0;
+			border-radius: 0;
+			margin: 0;
+		}
+	}
+}
