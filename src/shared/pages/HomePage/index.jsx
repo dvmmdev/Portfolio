@@ -1,35 +1,14 @@
-import React, { useEffect } from 'react';
-import './App.scss';
+import React from 'react';
+import './styles.scss';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import ProjectCard from '../../components/PostCard';
+import ContactForm from '../../components/ContactForm';
 
-import BlogPost from './pages/BlogPost';
-
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ProjectCard from './components/PostCard';
-import ContactForm from './components/ContactForm';
-
-import { Projects } from './posts';
+import { Projects } from '../../posts';
 
 export default () => {
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-
-	function handleScroll(e) {
-		const body = document.querySelector('body');
-		body.style.setProperty('--scrollY', window.scrollY);
-		body.style.setProperty(
-			'--scrollY-percent',
-			window.scrollY / window.innerHeight
-		);
-	}
-
-	const homepage = (
+	return (
 		<>
 			<div className='landing'>
 				<Header />
@@ -251,21 +230,5 @@ export default () => {
 				</div>
 			</section>
 		</>
-	);
-
-	return (
-		<div className='App'>
-			<Router>
-				<Switch>
-					<Route exact path='/'>
-						{homepage}
-					</Route>
-					<Route exact path='/blog'>
-						<BlogPost />
-					</Route>
-				</Switch>
-			</Router>
-			<Footer />
-		</div>
 	);
 };

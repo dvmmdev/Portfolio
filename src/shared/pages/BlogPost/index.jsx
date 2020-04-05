@@ -7,7 +7,6 @@ import { Posts } from '../../posts';
 import ProjectCard from '../../components/PostCard';
 
 export default () => {
-	console.log(Posts);
 	return (
 		<>
 			<Header />

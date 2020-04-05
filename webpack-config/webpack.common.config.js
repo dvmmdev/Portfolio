@@ -1,13 +1,9 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const autoprefixer = require('autoprefixer');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.js',
-	output: {
-		path: __dirname,
-		filename: './build/bundle.js',
-		publicPath: '/',
-	},
 	module: {
 		rules: [
 			{
@@ -16,15 +12,25 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: 'build/[path][name].[ext]',
-							publicPath: (url) => url.replace(/public/, ''),
+							name: '[path][name].[ext]',
+							outputPath: 'build/public/',
 						},
 					},
 				],
 			},
 			{
 				test: /\.s[ac]ss$/i,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+					},
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options: { plugins: [autoprefixer()] },
+					},
+					'sass-loader',
+				],
 			},
 			{
 				test: /\.jsx?$/,
@@ -33,7 +39,16 @@ module.exports = {
 			},
 			{
 				test: /\.html$/,
-				use: ['html-loader'],
+				use: [
+					{
+						loader: 'html-loader',
+						options: {
+							minimize: {
+								removeComments: false,
+							},
+						},
+					},
+				],
 			},
 			{
 				test: /\.md$/,
@@ -45,20 +60,18 @@ module.exports = {
 			},
 		],
 	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: 'public/[name].css',
+		}),
+	],
 	resolveLoader: {
 		modules: ['node_modules', path.resolve(__dirname, 'loaders')],
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.scss', '.html', '.md'],
 	},
-	devServer: {
-		port: 31199,
-		historyApiFallback: true,
+	node: {
+		__dirname: false,
 	},
-	plugins: [
-		new HtmlWebPackPlugin({
-			template: 'src/index.html',
-			filename: 'index.html',
-		}),
-	],
 };
