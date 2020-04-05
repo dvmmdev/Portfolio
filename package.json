@@ -4,9 +4,10 @@
 	"description": "DVMM Portfolio",
 	"main": "index.js",
 	"scripts": {
-		"webpack-dev-server": "webpack-dev-server --open",
-		"dev": "npm run webpack-dev-server --config webpack-config/webpack.dev.config",
-		"build:dev": "rm -rf build && webpack --mode development --config webpack-config/webpack.prod.config && node build/server"
+		"dev": "webpack-dev-server --config webpack-config/webpack.dev.config",
+		"dev:open": "webpack-dev-server --open --config webpack-config/webpack.dev.config",
+		"build:dev": "rm -rf build && webpack --mode development --config webpack-config/webpack.prod.config && node build/server",
+		"build:prod": "rm -rf build && webpack --mode production --config webpack-config/webpack.prod.config"
 	},
 	"author": "",
 	"license": "ISC",
@@ -29,6 +30,7 @@
 		"style-loader": "^1.1.3",
 		"webpack": "^4.42.1",
 		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.10.3",
 		"webpack-import-glob-loader": "^1.6.3"
 	},
 	"dependencies": {

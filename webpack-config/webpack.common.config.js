@@ -71,7 +71,4 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.scss', '.html', '.md'],
 	},
-	node: {
-		__dirname: false,
-	},
 };

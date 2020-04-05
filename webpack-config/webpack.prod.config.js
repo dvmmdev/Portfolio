@@ -7,7 +7,7 @@ const clientConfig = {
 	...commonConfig,
 	entry: './src/client/index.js',
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, '../build'),
 		filename: 'public/bundle.js',
 		publicPath: '/',
 	},
@@ -28,9 +28,12 @@ const serverConfig = {
 	entry: './src/server/index.js',
 	target: 'node',
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, '../build'),
 		filename: 'server.js',
 		libraryTarget: 'commonjs2',
+	},
+	node: {
+		__dirname: false,
 	},
 };
 
