@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-export default () => {
+const ContactForm: React.FC = () => {
 	return (
 		<div className='contact-form'>
 			<form action='' autoComplete='off'>
@@ -34,8 +34,8 @@ export default () => {
 							className='input'
 							name='message'
 							id='contact-msg'
-							cols='32'
-							rows='10'
+							cols={32}
+							rows={10}
 						></textarea>
 					</div>
 				</div>
@@ -46,3 +46,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default ContactForm;

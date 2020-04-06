@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
-export default ({ post: { title, desc, tags, imgs, links, permalink } }) => {
+import { IPost } from '../../posts';
+
+interface Props {
+	post: IPost;
+}
+
+const PostCard: React.FC<Props> = ({
+	post: { title, desc, tags, imgs, links, permalink },
+}) => {
 	const [currentThumb, setCurrentThumb] = useState(0);
 
 	const currentImg =
@@ -54,3 +62,5 @@ export default ({ post: { title, desc, tags, imgs, links, permalink } }) => {
 		</div>
 	);
 };
+
+export default PostCard;

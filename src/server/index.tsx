@@ -16,7 +16,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.get('*', (req, res) => {
 	const html = renderToString(
 		<StaticRouter location={req.url}>
-			<Route component={App} />
+			<App />
 		</StaticRouter>
 	);
 	res.send(index.replace('<!-- ::APP:: -->', html));

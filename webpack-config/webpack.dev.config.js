@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const devServerConfig = {
-	entry: './src/client/index.js',
+	entry: './src/client/index.tsx',
 	output: {
 		path: __dirname,
 		filename: './build/bundle.js',
@@ -36,13 +36,8 @@ const devServerConfig = {
 				],
 			},
 			{
-				test: /\.jsx?$/,
-				use: ['babel-loader', 'webpack-import-glob-loader'],
-				exclude: /node_modules/,
-			},
-			{
 				test: /\.tsx?$/,
-				use: 'ts-loader',
+				use: ['babel-loader', 'webpack-import-glob-loader'],
 				exclude: /node_modules/,
 			},
 			{
@@ -63,7 +58,7 @@ const devServerConfig = {
 		modules: ['node_modules', path.resolve(__dirname, 'loaders')],
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.html', '.md'],
+		extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.html', '.md'],
 	},
 	devServer: {
 		port: 31199,

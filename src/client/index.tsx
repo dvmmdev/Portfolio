@@ -7,7 +7,7 @@ import App from '../shared/App';
 
 render(
 	<BrowserRouter>
-		<Route component={App} />
+		<App />
 	</BrowserRouter>,
 	document.getElementById('root')
 );

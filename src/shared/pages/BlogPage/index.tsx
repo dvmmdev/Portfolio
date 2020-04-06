@@ -4,7 +4,7 @@ import './styles.scss';
 import { Posts } from '../../posts';
 import ProjectCard from '../../components/PostCard';
 
-export default () => {
+const BlogPage: React.FC = () => {
 	return (
 		<div className='wrapper posts-container'>
 			{Posts.map((post, i) => (
@@ -13,3 +13,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default BlogPage;

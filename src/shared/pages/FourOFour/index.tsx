@@ -3,7 +3,7 @@ import './styles.scss';
 
 import FourOFourContent from './404.md';
 
-export default () => {
+const FourOFour: React.FC = () => {
 	return (
 		<div
 			className='wrapper'
@@ -11,3 +11,5 @@ export default () => {
 		></div>
 	);
 };
+
+export default FourOFour;

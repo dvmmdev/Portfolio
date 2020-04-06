@@ -5,7 +5,7 @@ const commonConfig = require('./webpack.common.config');
 
 const clientConfig = {
 	...commonConfig,
-	entry: './src/client/index.js',
+	entry: './src/client/index.tsx',
 	output: {
 		path: path.resolve(__dirname, '../build'),
 		filename: 'public/bundle.js',
@@ -25,7 +25,7 @@ const clientConfig = {
 
 const serverConfig = {
 	...commonConfig,
-	entry: './src/server/index.js',
+	entry: './src/server/index.tsx',
 	target: 'node',
 	output: {
 		path: path.resolve(__dirname, '../build'),

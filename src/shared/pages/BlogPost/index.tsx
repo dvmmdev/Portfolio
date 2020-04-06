@@ -6,9 +6,15 @@ import FourOFour from '../FourOFour';
 
 import { findPost } from '../../posts';
 
-export default ({ location: { pathname } }) => {
+interface Props {
+	location: {
+		pathname: string;
+	};
+}
+
+const BlogPost: React.FC<Props> = ({ location: { pathname } }) => {
 	const [permalink, setPermalink] = useState(pathname);
-	const [post, setPost] = useState(undefined);
+	const [post, setPost] = useState(undefined); //TODO: Post type
 
 	useEffect(() => {
 		setPost(findPost(permalink));
@@ -25,3 +31,5 @@ export default ({ location: { pathname } }) => {
 		<FourOFour />
 	);
 };
+
+export default BlogPost;

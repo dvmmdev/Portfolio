@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { ComponentClass, FunctionComponent } from 'react';
 
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
 import BlogPost from './pages/BlogPost';
 import FourOFour from './pages/FourOFour';
 
-const routes = [
+interface IRoute {
+	path?: string;
+	component: ComponentClass<any, any> | FunctionComponent<any>;
+	exact: boolean;
+}
+
+const routes: IRoute[] = [
 	{
 		path: '/',
 		component: HomePage,

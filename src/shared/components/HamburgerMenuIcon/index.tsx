@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-export default () => {
+const HamburgerMenuIcon: React.FC = () => {
 	return (
 		<div className='hamburger-menu-icon'>
 			<div></div>
@@ -10,3 +10,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default HamburgerMenuIcon;

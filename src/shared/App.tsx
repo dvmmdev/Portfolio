@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import routes from './routes';
@@ -9,8 +9,8 @@ import routes from './routes';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-export default ({ location }) => {
-	console.log(location);
+const App: React.FC = () => {
+	const location = useLocation();
 	return (
 		<div className='App'>
 			<Header />
@@ -31,3 +31,5 @@ export default ({ location }) => {
 		</div>
 	);
 };
+
+export default App;

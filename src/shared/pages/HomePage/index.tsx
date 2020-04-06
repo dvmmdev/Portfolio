@@ -9,7 +9,7 @@ import AboutMeContent from './AboutMeContent.md';
 
 import { Projects } from '../../posts';
 
-export default () => {
+const HomePage: React.FC = () => {
 	return (
 		<div>
 			<div className='landing'>
@@ -214,3 +214,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default HomePage;
