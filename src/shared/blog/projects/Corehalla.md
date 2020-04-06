@@ -8,7 +8,7 @@ tags: ['Website', 'Discord Bot']
 imgs:
     [
         {
-            source: 'https://images.unsplash.com/photo-1502514276381-1ea51dfe201c?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80',
+            source: 'https://unsplash.com/photos/Qq7A85iCzhQ/download?force=true&w=640',
             alt: 'Corehalla',
             link: '#',
         },

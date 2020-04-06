@@ -33,8 +33,13 @@ module.exports = {
 			},
 			{
 				test: /\.jsx?$/,
-				exclude: /(node_modules|bower_components)/,
 				use: ['babel-loader', 'webpack-import-glob-loader'],
+				exclude: /node_modules/,
+			},
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.html$/,
@@ -68,6 +73,6 @@ module.exports = {
 		modules: ['node_modules', path.resolve(__dirname, 'loaders')],
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.scss', '.html', '.md'],
+		extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.html', '.md'],
 	},
 };

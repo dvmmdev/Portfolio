@@ -8,7 +8,7 @@ tags: ['NPM Module']
 imgs:
     [
         {
-            source: 'https://images.unsplash.com/photo-1585786180056-8d0343b4b851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+            source: 'https://unsplash.com/photos/cnXZcXkRvls/download?force=true&w=640',
             alt: 'Test',
             link: '[permalink]',
         },

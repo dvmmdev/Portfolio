@@ -11,7 +11,7 @@ tags: ['Article', 'Mockup']
 imgs:
     [
         {
-            source: 'https://images.unsplash.com/photo-1585703855101-8245dedacb64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+            source: 'https://unsplash.com/photos/Mc7k5DkxcBs/download?force=true&w=640',
             alt: 'Unsplash',
             link: '[permalink]',
         },
