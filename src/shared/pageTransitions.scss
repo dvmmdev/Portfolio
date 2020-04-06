@@ -1,0 +1,28 @@
+.page-transition-group {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 100vw;
+	width: 100vw;
+
+	& > * {
+		grid-area: 1;
+	}
+}
+
+.fade-enter {
+	opacity: 0;
+	transition: opacity 250ms ease-in 250ms;
+}
+
+.fade-enter.fade-enter-active {
+	opacity: 1;
+}
+
+.fade-exit {
+	opacity: 1;
+	transition: opacity 250ms ease-in;
+}
+
+.fade-exit.fade-exit-active {
+	opacity: 0;
+}

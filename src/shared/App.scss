@@ -1,5 +1,6 @@
 @import './variables.scss';
 @import './markdown.scss';
+@import './pageTransitions.scss';
 
 * {
 	box-sizing: border-box;
@@ -132,7 +133,4 @@ ul {
 	&:hover {
 		background-color: $bg;
 	}
-}
-
-@media only screen and (min-width: 60rem) {
 }

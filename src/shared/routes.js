@@ -22,7 +22,6 @@ const routes = [
 		exact: true,
 	},
 	{
-		path: '/',
 		component: FourOFour,
 		exact: false,
 	},

@@ -19,6 +19,4 @@ const Projects = Posts.filter((p) => p.type === 'project');
 const findPost = (permalink) =>
 	Posts.find((post) => post.permalink === permalink);
 
-console.log(Posts);
-
 export { Posts, Articles, Projects, findPost };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
+import { StaticRouter, Route } from 'react-router-dom';
 import express from 'express';
 import { readFileSync } from 'fs';
 import path from 'path';
@@ -15,11 +15,9 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
 	const html = renderToString(
-		<React.StrictMode>
-			<StaticRouter location={req.url}>
-				<App />
-			</StaticRouter>
-		</React.StrictMode>
+		<StaticRouter location={req.url}>
+			<Route component={App} />
+		</StaticRouter>
 	);
 	res.send(index.replace('<!-- ::APP:: -->', html));
 });

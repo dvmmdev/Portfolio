@@ -11,7 +11,7 @@ import { Projects } from '../../posts';
 
 export default () => {
 	return (
-		<>
+		<div>
 			<div className='landing'>
 				{/* <Header /> */}
 				<div className='hero'>
@@ -211,6 +211,6 @@ export default () => {
 					<ContactForm />
 				</div>
 			</section>
-		</>
+		</div>
 	);
 };
