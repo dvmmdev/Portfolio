@@ -15,6 +15,8 @@ body {
 	background-color: $bg;
 	color: $black;
 	min-height: 100vh;
+	font-size: 16px;
+	overflow-x: hidden;
 
 	--scrollY: 0;
 	--scrollY-percent: 0;
@@ -38,15 +40,36 @@ a:visited {
 }
 
 .wrapper {
-	max-width: 1200px;
+	max-width: 75rem;
 	margin: 0 auto;
 }
 
-h2 {
-	font-size: 64px;
-	font-weight: bold;
-	margin-bottom: 4rem;
-	display: inline-block;
+h1 {
+	font-size: 4rem;
+	background-color: $black;
+	color: $bg;
+	margin-bottom: 2rem;
+	margin-right: calc(var(--scrollY) * -0.5px);
+
+	&:hover {
+		&::before {
+			background-color: $accent;
+		}
+	}
+
+	&::before {
+		content: '';
+		width: 24px;
+		height: 24px;
+		margin-right: 24px;
+		background-color: $bg;
+		display: inline-block;
+	}
+
+	&::selection {
+		background-color: $white;
+		color: $black;
+	}
 
 	.subtitle {
 		font-size: 32px;
@@ -54,6 +77,13 @@ h2 {
 		display: block;
 		margin-left: 48px;
 	}
+}
+
+h2 {
+	font-size: 64px;
+	font-weight: bold;
+	margin-bottom: 4rem;
+	display: inline-block;
 
 	&:hover {
 		&::before {
@@ -102,4 +132,7 @@ ul {
 	&:hover {
 		background-color: $bg;
 	}
+}
+
+@media only screen and (min-width: 60rem) {
 }

@@ -1,1 +1,0 @@
-webpack `\dirname = '/'` by default

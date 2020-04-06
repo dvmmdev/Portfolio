@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.posts-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax($post-card-min-width, 1fr));
+	grid-gap: 2rem;
+}

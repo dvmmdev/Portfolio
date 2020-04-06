@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 import './styles.scss';
 
-export default () => {
+export default ({ fixed }) => {
 	return (
 		<>
-			<header>
+			<header className={fixed && 'fixed'}>
 				<div className='header-content'>
 					<span className='logo'>
-						D<span className='accent'>V</span>MM
+						<Link to='/'>
+							D<span className='accent'>V</span>MM
+						</Link>
 					</span>
 					<nav>
 						<ul>

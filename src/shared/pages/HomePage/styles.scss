@@ -3,7 +3,8 @@
 .landing {
 	height: 100vh;
 	display: grid;
-	grid-template-rows: auto 3fr 2fr;
+	grid-template-rows: 3fr 2fr;
+	position: relative;
 
 	&::before {
 		content: '';
@@ -20,6 +21,16 @@
 		z-index: -1;
 	}
 
+	&::after {
+		content: '';
+		position: absolute;
+		width: calc((var(--scrollY-percent) + 0.05) * 100vw);
+		height: 8rem;
+		left: 0;
+		bottom: 2rem;
+		background-color: $black;
+	}
+
 	.hero {
 		display: flex;
 		align-items: center;
@@ -30,6 +41,7 @@
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 4rem;
+		margin-top: calc(var(--scrollY) * -1.25px);
 	}
 }
 
@@ -40,7 +52,10 @@ section {
 	&.projects {
 		.projects-container {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+			grid-template-columns: repeat(
+				auto-fill,
+				minmax($post-card-min-width, 1fr)
+			);
 			grid-gap: 2rem;
 		}
 	}

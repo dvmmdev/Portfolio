@@ -1,5 +1,8 @@
 ---
 title: Corehalla
+type: project
+slug: corehalla
+date: 2020-04-05
 desc: Statistics website for the game Brawlhalla.
 tags: ['Website', 'Discord Bot']
 imgs:
@@ -14,7 +17,7 @@ links:
     [
         {
             title: 'Read More',
-            href: '/blog',
+            href: '[permalink]',
             buttonClass: 'blank',
             target: '_self',
         },
@@ -27,4 +30,6 @@ links:
     ]
 ---
 
-# Yup
+# Corehalla
+
+Statistics website for the game Brawlhalla.

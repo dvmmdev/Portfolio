@@ -2,32 +2,6 @@
 
 .markdown {
 	background-color: $bg;
-	h1 {
-		font-size: 4rem;
-		background-color: $black;
-		color: $bg;
-		margin-bottom: 2rem;
-
-		&:hover {
-			&::before {
-				background-color: $accent;
-			}
-		}
-
-		&::before {
-			content: '';
-			width: 24px;
-			height: 24px;
-			margin-right: 24px;
-			background-color: $bg;
-			display: inline-block;
-		}
-
-		&::selection {
-			background-color: $white;
-			color: $black;
-		}
-	}
 
 	h2 {
 		font-size: 3rem;

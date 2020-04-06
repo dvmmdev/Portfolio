@@ -1,7 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	module: {

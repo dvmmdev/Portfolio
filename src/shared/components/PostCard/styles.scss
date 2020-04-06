@@ -1,7 +1,5 @@
 @import '../../variables.scss';
 
-$thumb-height: 240px;
-
 .project-card {
 	background-color: transparent;
 	border-radius: 24px 24px 0 0;
@@ -42,14 +40,14 @@ $thumb-height: 240px;
 	}
 
 	.thumb {
-		height: $thumb-height;
+		height: $post-card-thumb-height;
 		background-color: transparent;
 		overflow: hidden;
 		transition: all ease 0.25s;
 		margin: 0 auto;
 
 		box-shadow: 0 0 8px rgba($black, 0.12);
-		width: $thumb-height;
+		width: $post-card-thumb-height;
 		border-radius: 50%;
 
 		img {

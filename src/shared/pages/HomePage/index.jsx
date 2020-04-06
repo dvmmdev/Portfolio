@@ -5,21 +5,23 @@ import Header from '../../components/Header';
 import ProjectCard from '../../components/PostCard';
 import ContactForm from '../../components/ContactForm';
 
+import AboutMeContent from './AboutMeContent.md';
+
 import { Projects } from '../../posts';
 
 export default () => {
 	return (
 		<>
 			<div className='landing'>
-				<Header />
+				{/* <Header /> */}
 				<div className='hero'>
 					<div className='wrapper'>
-						<h2>
+						<h1>
 							I build apps from back to front.
 							<span className='subtitle'>
 								Full stack web development.
 							</span>
-						</h2>
+						</h1>
 					</div>
 				</div>
 				<div className='cta'>
@@ -37,7 +39,7 @@ export default () => {
 					<div className='projects-container'>
 						{Projects.map((project, i) => (
 							<ProjectCard
-								project={project.attributes}
+								post={project}
 								key={i + Math.random()}
 							/>
 						))}
@@ -50,31 +52,11 @@ export default () => {
 						<a href='#about'>About Me</a>
 					</h2>
 					<div className='about-container'>
-						<div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Vivamus sed scelerisque dolor,
-								in maximus tellus. In ex orci, sagittis ut
-								imperdiet fringilla, tincidunt a dolor. Aliquam
-								erat volutpat. Aenean in tincidunt leo, at
-								commodo sem. Etiam suscipit fringilla nibh eu
-								tempor.
-							</p>
-							<p>
-								Maecenas eros nisi, rhoncus ut hendrerit vitae,
-								vestibulum viverra massa. Pellentesque hendrerit
-								luctus diam vitae facilisis. Cras tempor velit
-								non odio finibus lacinia. Nulla malesuada magna
-								sodales porta venenatis. Proin quis varius
-								lacus. Suspendisse eget ultrices odio. Ut nec
-								laoreet sapien.
-							</p>
-							<p>
-								Aenean varius sagittis tellus sed sollicitudin.
-								In nec lectus vitae est imperdiet interdum non
-								quis lectus.
-							</p>
-						</div>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: AboutMeContent.html,
+							}}
+						></div>
 						<div className='illustration'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'

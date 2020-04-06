@@ -1,4 +1,5 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const devServerConfig = {
@@ -24,7 +25,15 @@ const devServerConfig = {
 			},
 			{
 				test: /\.s[ac]ss$/i,
-				use: ['style-loader', 'css-loader', 'sass-loader'],
+				use: [
+					'style-loader',
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options: { plugins: [autoprefixer()] },
+					},
+					'sass-loader',
+				],
 			},
 			{
 				test: /\.jsx?$/,

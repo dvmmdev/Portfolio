@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import './styles.scss';
 
-export default ({ project: { title, desc, tags, imgs, links } }) => {
+export default ({ post: { title, desc, tags, imgs, links, permalink } }) => {
 	const [currentThumb, setCurrentThumb] = useState(0);
 
 	const currentImg =
@@ -10,7 +11,13 @@ export default ({ project: { title, desc, tags, imgs, links } }) => {
 	return (
 		<div className='project-card'>
 			<div className='thumb'>
-				<a href={currentImg.link}>
+				<a
+					href={
+						currentImg.link === '[permalink]'
+							? permalink
+							: currentImg.link
+					}
+				>
 					{currentImg && (
 						<img src={currentImg.source} alt={currentImg.alt} />
 					)}
@@ -29,14 +36,18 @@ export default ({ project: { title, desc, tags, imgs, links } }) => {
 				<p className='desc'>{desc}</p>
 				<div className='links'>
 					{links.map((link, i) => (
-						<a
-							href={link.href}
+						<Link
+							to={
+								link.href === '[permalink]'
+									? permalink
+									: link.href
+							}
 							className={`button ${link.buttonClass}`}
 							target={link.target}
 							key={i}
 						>
 							{link.title}
-						</a>
+						</Link>
 					))}
 				</div>
 			</div>

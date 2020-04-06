@@ -1,5 +1,8 @@
 ---
 title: corehalla.js
+type: project
+slug: corehallajs
+date: 2020-04-05T01:00
 desc: Brawlhalla API Wrapper for Node.js.
 tags: ['NPM Module']
 imgs:
@@ -7,16 +10,22 @@ imgs:
         {
             source: 'https://images.unsplash.com/photo-1585786180056-8d0343b4b851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
             alt: 'Test',
-            link: '#',
+            link: '[permalink]',
         },
     ]
 links:
     [
         {
             title: 'Read More',
-            href: '/blog',
+            href: '[permalink]',
             buttonClass: 'blank',
             target: '_self',
+        },
+        {
+            title: 'NPM',
+            href: 'https://www.npmjs.com/package/corehalla.js',
+            buttonClass: 'hollow',
+            target: '_blank_',
         },
     ]
 ---
