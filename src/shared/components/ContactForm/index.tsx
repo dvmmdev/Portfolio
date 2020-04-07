@@ -7,7 +7,7 @@ const ContactForm: React.FC = () => {
 			<form action='' autoComplete='off'>
 				<div className='field'>
 					<div>
-						<label htmlFor='name'>Full Name</label>
+						<label htmlFor='name'>Name</label>
 						<input
 							className='input'
 							type='text'
@@ -29,7 +29,7 @@ const ContactForm: React.FC = () => {
 				</div>
 				<div className='field'>
 					<div>
-						<label htmlFor='name'>Message</label>
+						<label htmlFor='message'>Message</label>
 						<textarea
 							className='input'
 							name='message'
