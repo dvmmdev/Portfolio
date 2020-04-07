@@ -1,19 +1,24 @@
+import * as functions from 'firebase-functions';
+import firebase from 'firebase-admin';
+
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, Route } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
 import express from 'express';
 import { readFileSync } from 'fs';
 import path from 'path';
 
 import App from '../shared/App';
 
-const index = readFileSync(path.join(__dirname, 'index.html')).toString();
+firebase.initializeApp(functions.config().firebase);
+
+const index = readFileSync(path.join(__dirname, '../index.html')).toString();
 
 const app = express();
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.get('*', (req, res) => {
+app.get('**', (req, res) => {
 	const html = renderToString(
 		<StaticRouter location={req.url}>
 			<App />
@@ -22,6 +27,4 @@ app.get('*', (req, res) => {
 	res.send(index.replace('<!-- ::APP:: -->', html));
 });
 
-app.listen(31199, () => {
-	console.log('Server listening on port 31199!');
-});
+export let ssrapp = functions.https.onRequest(app);

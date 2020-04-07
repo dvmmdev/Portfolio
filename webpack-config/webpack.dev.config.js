@@ -58,7 +58,16 @@ const devServerConfig = {
 		modules: ['node_modules', path.resolve(__dirname, 'loaders')],
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.html', '.md'],
+		extensions: [
+			'.js',
+			'.jsx',
+			'.ts',
+			'.tsx',
+			'.scss',
+			'.html',
+			'.md',
+			'.json',
+		],
 	},
 	devServer: {
 		port: 31199,

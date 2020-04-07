@@ -1,6 +1,4 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
 
 module.exports = {
 	module: {
@@ -15,20 +13,6 @@ module.exports = {
 							outputPath: 'build/public/',
 						},
 					},
-				],
-			},
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-					},
-					'css-loader',
-					{
-						loader: 'postcss-loader',
-						options: { plugins: [autoprefixer()] },
-					},
-					'sass-loader',
 				],
 			},
 			{
@@ -59,15 +43,19 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new MiniCssExtractPlugin({
-			filename: 'public/[name].css',
-		}),
-	],
 	resolveLoader: {
 		modules: ['node_modules', path.resolve(__dirname, 'loaders')],
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.html', '.md'],
+		extensions: [
+			'.js',
+			'.jsx',
+			'.ts',
+			'.tsx',
+			'.scss',
+			'.html',
+			'.md',
+			'.json',
+		],
 	},
 };
