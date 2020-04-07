@@ -5,8 +5,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const devServerConfig = {
 	entry: './src/client/index.tsx',
 	output: {
-		path: __dirname,
-		filename: './build/bundle.js',
+		path: path.resolve(__dirname, '../build'),
+		filename: 'public/bundle.js',
 		publicPath: '/',
 	},
 	module: {
